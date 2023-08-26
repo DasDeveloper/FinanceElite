@@ -40,6 +40,10 @@ app.listen()
 app.get('/', (req, res ) =>{
     res.send("Hello World!")
 })
+app.get('/api/config', (req, res) =>{
+    const publishableKey = process.env.STRIPE_PUBLIC_KEY
+    res.send(publishableKey);
+})
 
 const connectToDatabase = async () =>{
     await mongoose.connect(process.env.DATABASE).then(()=>{
