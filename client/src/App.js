@@ -22,7 +22,7 @@ import SpendingChartPage from "./pages/SpendingChartPage";
 import RevenueChartPage from "./pages/RevenueChartPage";
 import GroupChartPage from "./pages/GroupChartPage";
 import Homepage from "./pages/Homepage";
-import { PlanPage } from "./pages/PlanPage";
+import PlanPage from "./pages/PlanPage";
 
 
 
