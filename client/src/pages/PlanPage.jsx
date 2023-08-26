@@ -26,6 +26,10 @@ const PlanPage = () => {
         navigate('/dashboard')
       }
 
+    const redirectToUpgrade = () =>{
+      navigate('/')
+    }
+
   return (
     <div className='pl-20 pr-16 flex flex-col h-100vh bg-gradient-to-t from-[#374e67] from-20% to-[#0c141c] to-70%'>
 
@@ -78,7 +82,7 @@ const PlanPage = () => {
                 
                 <div className='text-center'>
                     <Typography className="text-center py-12" fontSize={35}>12.99$/month</Typography>
-                    <button className='bg-dark-graph-red w-2/4 h-10 rounded-2xl'><Link to={"/"}>Select</Link></button>
+                    <button onClick={redirectToUpgrade} className='bg-dark-graph-red w-2/4 h-10 rounded-2xl'>Select</button>
                 </div>
             </div>
 
@@ -95,7 +99,7 @@ const PlanPage = () => {
 
                 <div className='text-center'>
                     <Typography className="text-center py-12" fontSize={35}>29.99$/month</Typography>
-                    <button className='bg-dark-graph-red w-2/4 h-10 rounded-2xl'><Link to={"/"}>Select</Link></button>
+                    <button onClick={redirectToUpgrade}className='bg-dark-graph-red w-2/4 h-10 rounded-2xl'>Select</button>
                 </div>
 
             </div>
