@@ -22,6 +22,7 @@ import SpendingChartPage from "./pages/SpendingChartPage";
 import RevenueChartPage from "./pages/RevenueChartPage";
 import GroupChartPage from "./pages/GroupChartPage";
 import Homepage from "./pages/Homepage";
+import PlanPage from "./pages/PlanPage";
 
 
 
@@ -32,6 +33,7 @@ function App() {
 
   const [sessionInfo, setSessionInfo] = useState();
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const excludedURL = ['/plans', '/'];
 
   useEffect(()=>{
     
@@ -81,25 +83,29 @@ function App() {
     
       <div className="flex flex-row">
 
-      {sessionInfo ?
+      {sessionInfo && excludedURL.indexOf(pathname)<0 &&  <Sidebar isOpen={isSidebarOpen}/>}
+      {/* {sessionInfo ?
 
         <Sidebar isOpen={isSidebarOpen}/>
       
-        : <></>}
+        : <></>} */}
         
         
       <div className="flex flex-col h-100vh w-full">
 
      
-      {sessionInfo ?
+     {sessionInfo && excludedURL.indexOf(pathname)<0 &&  <Navbar  onMenuClick={() => setIsSidebarOpen(!isSidebarOpen)}/>}
+      {/* {sessionInfo ?
         <Navbar  onMenuClick={() => setIsSidebarOpen(!isSidebarOpen)}/>
-        :<></>}
+        :<></>} */}
         
         <Routes>
           
           <Route path="/login" element={<AuthenticatedProtectedRoute><LoginPage/></AuthenticatedProtectedRoute>}></Route>
           <Route path="/signup" element={<AuthenticatedProtectedRoute><SignupPage/></AuthenticatedProtectedRoute>}></Route>
-          <Route path="/" element={<AuthenticatedProtectedRoute><Homepage/></AuthenticatedProtectedRoute>}></Route>
+          <Route path="/" element={<Homepage/>}></Route>
+
+          <Route path="/plans" element={<PlanPage/>}></Route>
 
           <Route path="/dashboard" element={<ProtectedRoute><Dashboard isSidebarOpen={isSidebarOpen}/></ProtectedRoute>}></Route>
           {/* <Route path="/calendar" element={<ProtectedRoute><CalendarPage/></ProtectedRoute>}></Route> */}
