@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Box from '@mui/material/Box'
 import { backgroundColor } from '../theme';
 import { Typography } from '@mui/material';
@@ -11,12 +11,14 @@ import DashboardIcon from '@mui/icons-material/Dashboard';
 import ReceiptIcon from '@mui/icons-material/Receipt';
 import CategoryIcon from '@mui/icons-material/Category';
 import StoreIcon from '@mui/icons-material/Store';
-
+import {SessionAPIContext} from "../contexts/SessionAPIContext"
 
 
 const Sidebar = ({isOpen}) => {
 
   const colors = backgroundColor;
+  const userInfo = useContext(SessionAPIContext)
+
 
   if(isOpen){
 
@@ -24,11 +26,12 @@ const Sidebar = ({isOpen}) => {
 
     <>
 
-    <Box className='h-100vh w-72 bg-dark-main border-dark-secondary border-r-dark-secondary border-r-4 '>
+    <Box className='h-100vh w-72 bg-dark-main border-dark-secondary border-r-dark-secondary border-r-4'>
 
       <CSidebar>
         <CSidebarBrand> <div className='flex flex-row items-center justify-center mt-4 p-2'><PublicIcon sx={{fontSize:35, color:colors['dark-icon']}}/> <Typography className='text-dark-icon'fontSize={25}>FinanceElite</Typography> </div></CSidebarBrand>
-          <CSidebarNav className='m-auto mt-32 text-dark-icon'>
+          <CSidebarNav className='m-auto mt-10 text-dark-icon'>
+          <Typography className='pb-20 text-center' fontSize={25}>Hello, {userInfo.firstname} {userInfo.lastname}</Typography>
 
           <Typography className='text-dark-icon p-2 text-2xl'> Main</Typography>
             

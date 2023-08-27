@@ -14,6 +14,7 @@ import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
+import Swal from "sweetalert2"
 
 const NewTransactionModal = ({isNewTransactionModalOpen, onClose}) => {
 
@@ -110,6 +111,18 @@ const NewTransactionModal = ({isNewTransactionModalOpen, onClose}) => {
         }
         if(res.data.status ===400){
           alert('User ID not valid. Contact administrator')
+        }
+        if(res.data.status===403){
+          Swal.fire({
+            title:"Upgrade to new plan",
+            text:`You've reached the limit on the number of transactions you can add. Please upgrade to another plan for more access.`,
+            icon:'error',
+            showConfirmButton: true,
+            confirmButtonColor: colors['dark-graph-red'],
+            confirmButtonText:'Ok',
+            background:colors['dark-main'],
+            color:colors['dark-text'], 
+        })
         }
 
         onClose();

@@ -4,6 +4,7 @@ const cors = require("cors")
 const dotenv = require("dotenv").config();
 const session = require('express-session')
 const MongoDBStore = require('connect-mongo');
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY)
 
 
 const app = express();
@@ -71,6 +72,8 @@ app.use('/api/auth', require('./routes/authRoutes.js'));
 app.use('/api/category', require('./routes/categoryRoutes.js'))
 app.use('/api/company', require('./routes/companyRoutes'))
 app.use('/api/transaction', require('./routes/transactionRoutes'))
+app.use('/api/stripe', require('./routes/stripeRoutes.js'))
+
 
 app.listen(PORT, () =>{
     console.log(`Server is listening on port ${PORT}`)

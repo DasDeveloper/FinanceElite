@@ -51,6 +51,19 @@ const NewCategoryModal = ({isNewCategoryModalOpen, onClose}) => {
         })
         }
 
+        if(res.data.status===403){
+          Swal.fire({
+            title:"Upgrade to new plan",
+            text:`You've reached the limit on the number of categories you can add. Please upgrade to another plan for more access.`,
+            icon:'error',
+            showConfirmButton: true,
+            confirmButtonColor: colors['dark-graph-red'],
+            confirmButtonText:'Ok',
+            background:colors['dark-main'],
+            color:colors['dark-text'], 
+        })
+        }
+
         setLoading(false);
 
         onClose();

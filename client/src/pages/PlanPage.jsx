@@ -57,8 +57,8 @@ const PlanPage = () => {
                 <ul className='mt-10 p-2'>
                     <li className='my-4'><CheckIcon/> Access to our charts about your transaction</li>
                     <li className='my-4'><CheckIcon/> Access to our tables with your transactions</li>
-                    <li className='my-4'><CheckIcon/> Up to 25 custom categories and companies that can used to define your transactions</li>
-                    {/* <li><CheckIcon/>Up to 100 requests per day</li> */}
+                    <li className='my-4'><CheckIcon/> Add up to 25 custom categories and companies that can used to define your transactions</li>
+                    <li className='my-4'><CheckIcon/> Add up to 200 transactions with reliable tables and charts.</li>
                 </ul>
 
                 <div className='text-center'>
@@ -76,12 +76,12 @@ const PlanPage = () => {
                     <li className='my-4'><CheckIcon/> Access to our charts about your transaction</li>
                     <li className='my-4'><CheckIcon/> Access to our tables with your transactions</li>
                     <li className='my-4'><CheckIcon/> Up to 75 custom categories and companies that can used to define your transactions</li>
-                    {/* <li><CheckIcon/>Up to 100 requests per day</li> */}
+                    <li className='my-4'><CheckIcon/> Add up to 2500 transactions with reliable tables and charts.</li>
                 </ul>
 
                 
                 <div className='text-center'>
-                    <Typography className="text-center py-12" fontSize={35}>12.99$/month</Typography>
+                    <Typography className="text-center py-12" fontSize={35}>39.99$</Typography>
                     <button onClick={redirectToUpgrade} className='bg-dark-graph-red w-2/4 h-10 rounded-2xl'>Select</button>
                 </div>
             </div>
@@ -94,11 +94,11 @@ const PlanPage = () => {
                     <li className='my-4'><CheckIcon/> Access to our charts about your transaction</li>
                     <li className='my-4'><CheckIcon/> Access to our tables with your transactions</li>
                     <li className='my-4'><CheckIcon/> Unlimited custom categories and companies that can be used to define your transactions</li>
-                    {/* <li><CheckIcon/>Up to 100 requests per day</li> */}
+                    <li className='my-4'><CheckIcon/> Unlimited transactions with reliable tables and charts.</li>
                 </ul>
 
                 <div className='text-center'>
-                    <Typography className="text-center py-12" fontSize={35}>29.99$/month</Typography>
+                    <Typography className="text-center py-12" fontSize={35}>99.99$</Typography>
                     <button onClick={redirectToUpgrade}className='bg-dark-graph-red w-2/4 h-10 rounded-2xl'>Select</button>
                 </div>
 

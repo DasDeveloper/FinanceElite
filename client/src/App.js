@@ -33,7 +33,8 @@ function App() {
 
   const [sessionInfo, setSessionInfo] = useState();
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-  const excludedURL = ['/plans', '/'];
+  const excludedURLForSidebar = ['/plans', '/'];
+  const excludedURLForNoSession = ['/', '/signup', '/plans']
 
   useEffect(()=>{
     
@@ -48,27 +49,12 @@ function App() {
             return;
           }
           if(response.data.status ===401){
-            
-            if(pathname!=='/signup'){
 
-              if(pathname!=='/'){
-
-                navigate('/login')
-              }
+            if(excludedURLForNoSession.indexOf(pathname)<0){
+              navigate('/login')
             }
-
-            if(pathname!=='/'){
-              if(pathname!=='/signup'){
-
-                navigate('/login')
-              }
-            }
-            
-            
             return;
           }
-
-
         }).catch(err => console.log(err));
 
       }
@@ -83,21 +69,12 @@ function App() {
     
       <div className="flex flex-row">
 
-      {sessionInfo && excludedURL.indexOf(pathname)<0 &&  <Sidebar isOpen={isSidebarOpen}/>}
-      {/* {sessionInfo ?
-
-        <Sidebar isOpen={isSidebarOpen}/>
-      
-        : <></>} */}
-        
+      {sessionInfo && excludedURLForSidebar.indexOf(pathname)<0 &&  <Sidebar isOpen={isSidebarOpen}/>}
         
       <div className="flex flex-col h-100vh w-full">
 
      
-     {sessionInfo && excludedURL.indexOf(pathname)<0 &&  <Navbar  onMenuClick={() => setIsSidebarOpen(!isSidebarOpen)}/>}
-      {/* {sessionInfo ?
-        <Navbar  onMenuClick={() => setIsSidebarOpen(!isSidebarOpen)}/>
-        :<></>} */}
+     {sessionInfo && excludedURLForSidebar.indexOf(pathname)<0 &&  <Navbar  onMenuClick={() => setIsSidebarOpen(!isSidebarOpen)}/>}
         
         <Routes>
           
@@ -117,15 +94,13 @@ function App() {
           <Route path="/charts/group" element={<ProtectedRoute><GroupChartPage/></ProtectedRoute>}></Route>
           <Route path={"*"} element={<ProtectedRoute><Dashboard/></ProtectedRoute>}></Route>
           
-        
-
         </Routes>  
         
         
     </div>
         
         
-        </div>
+  </div>
 
     </SessionAPIContext.Provider>
       

@@ -18,7 +18,7 @@ const login = async (req, res) =>{
 
     if(!result) return res.json({message: "Wrong credentials", status:401});
 
-    req.session.user = {userID: user.id, userRole: user.role};
+    req.session.user = {userID: user.id, userRole: user.role, userPlan: user.plan, firstname: user.firstname, lastname: user.lastname};
 
     return res.json({message: "Successfully logged in", status:200})
 
