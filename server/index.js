@@ -72,7 +72,13 @@ app.use('/api/auth', require('./routes/authRoutes.js'));
 app.use('/api/category', require('./routes/categoryRoutes.js'))
 app.use('/api/company', require('./routes/companyRoutes'))
 app.use('/api/transaction', require('./routes/transactionRoutes'))
-app.use('/api/stripe', require('./routes/stripeRoutes.js'))
+// app.use('/api/stripe', require('./routes/stripeRoutes.js'))
+
+app.post('/api/stripe/create-payment-intent', (req, res) =>{
+
+
+})
+
 
 
 app.listen(PORT, () =>{

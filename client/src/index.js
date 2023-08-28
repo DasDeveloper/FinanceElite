@@ -9,16 +9,10 @@ import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-const response = await axios.get('/api/config');
-
-const stripePromise = loadStripe(response.data)
 root.render(
   
     <BrowserRouter>
-      <Elements stripe={stripePromise}>
         <App />
-      </Elements>
-      
     </BrowserRouter>
 );
 
