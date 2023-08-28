@@ -23,8 +23,14 @@ import RevenueChartPage from "./pages/RevenueChartPage";
 import GroupChartPage from "./pages/GroupChartPage";
 import Homepage from "./pages/Homepage";
 import PlanPage from "./pages/PlanPage";
+import CheckoutPage from "./pages/CheckoutPage";
+import {Elements} from '@stripe/react-stripe-js';
+import { loadStripe } from "@stripe/stripe-js";
+import UpgradePlanPage from "./pages/UpgradePlanPage";
 
 
+const response = await axios.get('/api/config');
+const stripePromise = loadStripe(response.data)
 
 function App() {
   
@@ -33,7 +39,7 @@ function App() {
 
   const [sessionInfo, setSessionInfo] = useState();
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-  const excludedURLForSidebar = ['/plans', '/'];
+  const excludedURLForSidebar = ['/plans', '/', '/upgrade'];
   const excludedURLForNoSession = ['/', '/signup', '/plans']
 
   useEffect(()=>{
@@ -62,6 +68,7 @@ function App() {
 
   }, [pathname])
 
+
   
   return (
 
@@ -83,6 +90,7 @@ function App() {
           <Route path="/" element={<Homepage/>}></Route>
 
           <Route path="/plans" element={<PlanPage/>}></Route>
+          <Route path="/upgrade" element={<ProtectedRoute><UpgradePlanPage/></ProtectedRoute>}></Route>
 
           <Route path="/dashboard" element={<ProtectedRoute><Dashboard isSidebarOpen={isSidebarOpen}/></ProtectedRoute>}></Route>
           {/* <Route path="/calendar" element={<ProtectedRoute><CalendarPage/></ProtectedRoute>}></Route> */}

@@ -48,8 +48,6 @@ const PlanPage = () => {
                 
                 <div className='text-center'>
                     <Typography className="text-center py-12" fontSize={35}>39.99$</Typography>
-                    {userInfo ?
-                    <button className='bg-dark-graph-red w-2/4 h-10 rounded-2xl'>Select</button>:<></>}
                 </div>
             </div>
 
@@ -66,8 +64,6 @@ const PlanPage = () => {
 
                 <div className='text-center'>
                     <Typography className="text-center py-12" fontSize={35}>99.99$</Typography>
-                    {userInfo ? 
-                    <button className='bg-dark-graph-red w-2/4 h-10 rounded-2xl'>Select</button>:<></>}
                 </div>
 
             </div>
