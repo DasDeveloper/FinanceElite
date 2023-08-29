@@ -4,13 +4,13 @@ import axios from "axios"
 import { loadStripe } from '@stripe/stripe-js';
 
 
-const stripePromise = null;
+// const stripePromise = null;
 
-if(!stripePromise){
+// if(!stripePromise){
 
-  const response = await axios.get('/api/config');
-  stripePromise = loadStripe(response.data)
-}
+//   const response = await axios.get('/api/config');
+//   stripePromise = loadStripe(response.data)
+// }
 
 const CheckoutPage = () => {
 
@@ -20,10 +20,10 @@ const CheckoutPage = () => {
   
   return (
     <>
-      <Elements stripe={stripePromise} options={options}>
+      {/* <Elements stripe={stripePromise} options={options}>
 
 
-      </Elements>
+      </Elements> */}
     </>
   )
 }
