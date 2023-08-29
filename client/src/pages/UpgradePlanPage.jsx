@@ -3,11 +3,14 @@ import React, { useContext } from 'react'
 import { SessionAPIContext } from '../contexts/SessionAPIContext'
 import CheckIcon from '@mui/icons-material/Check';
 import PublicNavbar from '../global/PublicNavbar';
+import { Link } from 'react-router-dom';
 
 const UpgradePlanPage = () => {
 
     
   const userInfo = useContext(SessionAPIContext);
+
+
 
   return (
     <div className='pl-20 pr-16 flex flex-col h-100vh bg-dark-main text-dark-text'>
@@ -33,7 +36,7 @@ const UpgradePlanPage = () => {
 
                   <div className='text-center'>
                       <Typography className="text-center py-12" fontSize={35}>39.99$</Typography>
-                      <button className='bg-dark-graph-red w-2/4 h-10 rounded-2xl'>Select</button>
+                      <button className='bg-dark-graph-red w-2/4 h-10 rounded-2xl'><Link to={'/checkout'} state={{productID:1}}>Select</Link></button>
                   </div>
             </div>
 
@@ -50,7 +53,7 @@ const UpgradePlanPage = () => {
               </ul>
               <div className='text-center'>
                   <Typography className="text-center py-12" fontSize={35}>99.99$</Typography>
-                  <button className='bg-dark-graph-red w-2/4 h-10 rounded-2xl'>Select</button>
+                  <button className='bg-dark-graph-red w-2/4 h-10 rounded-2xl'><Link to={'/checkout'} state={{productID:2}}>Select</Link></button>
               </div>
             </div>
 
@@ -71,7 +74,7 @@ const UpgradePlanPage = () => {
               <div className='text-center'>
                   <Typography className="text-center py-12" fontSize={35}>60.00$</Typography>
                   
-                  <button className='bg-dark-graph-red w-2/4 h-10 rounded-2xl'>Select</button>
+                  <button className='bg-dark-graph-red w-2/4 h-10 rounded-2xl'><Link to={'/checkout'} state={{productID:3}}>Select</Link></button>
               </div>
             </div>
             

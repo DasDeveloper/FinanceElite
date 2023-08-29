@@ -75,10 +75,21 @@ app.use('/api/transaction', require('./routes/transactionRoutes'))
 app.use('/api/product', require('./routes/productRoutes.js'))
 // app.use('/api/stripe', require('./routes/stripeRoutes.js'))
 
-app.post('/api/stripe/create-payment-intent', (req, res) =>{
-
-
-})
+app.post("/api/stripe/create-payment-intent", async (req, res) => {
+    // const { items } = req.body;
+  
+    // const paymentIntent = await stripe.paymentIntents.create({
+    //   amount: calculateOrderAmount(items),
+    //   currency: "cad",
+    //   automatic_payment_methods: {
+    //     enabled: true,
+    //   },
+    // });
+  
+    // res.send({
+    //   clientSecret: paymentIntent.client_secret,
+    // });
+  });
 
 
 

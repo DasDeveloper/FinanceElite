@@ -37,7 +37,7 @@ function App() {
 
   const [sessionInfo, setSessionInfo] = useState();
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-  const excludedURLForSidebar = ['/plans', '/', '/upgrade'];
+  const excludedURLForSidebar = ['/plans', '/', '/upgrade', '/checkout'];
   const excludedURLForNoSession = ['/', '/signup', '/plans']
 
   useEffect(()=>{
@@ -89,7 +89,8 @@ function App() {
 
           <Route path="/plans" element={<PlanPage/>}></Route>
           <Route path="/upgrade" element={<ProtectedRoute><UpgradePlanPage/></ProtectedRoute>}></Route>
-
+          <Route path="/checkout" element={<ProtectedRoute><CheckoutPage/></ProtectedRoute>}></Route>
+          
           <Route path="/dashboard" element={<ProtectedRoute><Dashboard isSidebarOpen={isSidebarOpen}/></ProtectedRoute>}></Route>
           {/* <Route path="/calendar" element={<ProtectedRoute><CalendarPage/></ProtectedRoute>}></Route> */}
           <Route path="/category" element={<ProtectedRoute ><CategoryPage/></ProtectedRoute>}></Route>
