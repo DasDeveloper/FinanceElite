@@ -1,12 +1,11 @@
 import React from 'react'
 import {Typography} from "@mui/material"
-import PublicIcon from '@mui/icons-material/Public';
-import { backgroundColor } from '../theme';
 import {Link, useNavigate} from "react-router-dom"
 import CheckIcon from '@mui/icons-material/Check';
 import { useContext } from 'react';
 import {SessionAPIContext} from  "../contexts/SessionAPIContext"
 import PublicNavbar from '../global/PublicNavbar';
+import { backgroundColor } from '../theme';
 
 const PlanPage = () => {
     const colors = backgroundColor;

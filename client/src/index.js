@@ -6,6 +6,7 @@ import {loadStripe} from '@stripe/stripe-js';
 import axios from "axios"
 import './index.css';
 import App from './App';
+import "@stripe/stripe-js"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 

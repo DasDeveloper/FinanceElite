@@ -14,7 +14,7 @@ const UpgradePlanPage = () => {
 
         <PublicNavbar/>
 
-        <Typography  className="text-center" fontSize={50}>Bases on your current plan, here are your possible upgrades:</Typography>
+        <Typography  className="text-center" fontSize={50}>Based on your current plan, here are your possible upgrades:</Typography>
 
         
         <div className='flex justify-between mt-10 m-auto h-120 w-4/5'>
@@ -57,10 +57,10 @@ const UpgradePlanPage = () => {
             </>:<></>}
 
 
-            {userInfo.userPlan === 'PRO' ? <>
+            {userInfo.userPlan === 'PREMIUM' ? <>
 
             <div className='p-4 h-full w-100 text-dark-text border-dark-text border-2 rounded-3xl bg-none animate-fade-down animate-duration-500 animate-delay-500'>
-              <Typography className='text-center' fontSize={35}>Pro to Premium</Typography>
+              <Typography className='text-center' fontSize={35}>Premium to Pro</Typography>
 
               <ul className='mt-10 p-2'>
                   <li className='my-4'><CheckIcon/> Access to our charts about your transaction</li>

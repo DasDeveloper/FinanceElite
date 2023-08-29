@@ -29,8 +29,6 @@ import { loadStripe } from "@stripe/stripe-js";
 import UpgradePlanPage from "./pages/UpgradePlanPage";
 
 
-const response = await axios.get('/api/config');
-const stripePromise = loadStripe(response.data)
 
 function App() {
   
