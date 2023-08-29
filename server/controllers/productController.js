@@ -35,7 +35,7 @@ const getProductByProductID = async (req, res) =>{
 
     if(!product) return res.status(400).send("Product not found.")
 
-    return res.json({message: "Product found.", status:200, productStripeID:product.stripeID, productPrice: product.price})
+    return res.json({message: "Product found.", status:200, productName: product.name, productStripeID:product.stripeID, productPrice: product.price})
 }
 
 const getProductByProductName = async (req, res) =>{
@@ -47,7 +47,7 @@ const getProductByProductName = async (req, res) =>{
 
     if(!product) return res.status(400).send("Product not found.")
 
-    return res.json({message: "Product found.", status:200, productStripeID:product.stripeID, productPrice: product.price})
+    return res.json({message: "Product found.", status:200, productName: product.name, productStripeID:product.stripeID, productPrice: product.price})
 }
 
 
