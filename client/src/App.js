@@ -27,8 +27,11 @@ import CheckoutPage from "./pages/CheckoutPage";
 import {Elements} from '@stripe/react-stripe-js';
 import { loadStripe } from "@stripe/stripe-js";
 import UpgradePlanPage from "./pages/UpgradePlanPage";
+import StripeContainer from "./pages/StripeContainer";
 
 
+const response = await axios.get('/api/config');
+const stripePromise = loadStripe(response.data)
 
 function App() {
   
@@ -89,7 +92,7 @@ function App() {
 
           <Route path="/plans" element={<PlanPage/>}></Route>
           <Route path="/upgrade" element={<ProtectedRoute><UpgradePlanPage/></ProtectedRoute>}></Route>
-          <Route path="/checkout" element={<ProtectedRoute><CheckoutPage/></ProtectedRoute>}></Route>
+          <Route path="/checkout" element={<ProtectedRoute><StripeContainer stripePromise={stripePromise}/></ProtectedRoute>}></Route>
           
           <Route path="/dashboard" element={<ProtectedRoute><Dashboard isSidebarOpen={isSidebarOpen}/></ProtectedRoute>}></Route>
           {/* <Route path="/calendar" element={<ProtectedRoute><CalendarPage/></ProtectedRoute>}></Route> */}
