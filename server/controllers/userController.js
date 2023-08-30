@@ -1,7 +1,7 @@
 const User = require('../model/userModel')
 const bcryptjs = require("bcryptjs")
 const saltRounds = 12;
-
+const purchaseHelper = require('../helper/purchaseHelper')
 
 const createNewUser = async (req, res) =>{
 
@@ -50,9 +50,30 @@ const createNewUser = async (req, res) =>{
 }
 
 
+const verifyUserPurchase = async (req, res) =>{
+
+    const validatorHashMap = purchaseHelper.validatorHashMap();
+
+    const {userID, productID} = req.body;
+    
+    if(!userID || !productID) return res.json({message: "Some fields are missing",status: 422})
+
+    const user = await User.findOne({_id: userID});
+
+    if (!user) return res.status(404).json({message:"User not found.", status:404})
+    const userPlan = user.plan;
+
+    if(validatorHashMap.get(userPlan).includes(productID)){
+        return res.status(200).send("User can purchase this product")
+    }else{
+        return res.status(403).send("User can't purchase this item.")
+    }
+
+}
 
 
 
 module.exports = {
-    createNewUser
+    createNewUser,
+    verifyUserPurchase
 }

@@ -7,6 +7,7 @@ const MongoDBStore = require('connect-mongo');
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY)
 const Product = require('./model/productModel')
 const User = require('./model/userModel')
+const purchaseHelper = require('./helper/purchaseHelper')
 
 
 const app = express();
@@ -80,10 +81,7 @@ app.use('/api/product', require('./routes/productRoutes.js'))
 app.post("/api/stripe/create-payment-intent", async (req, res) => {
 
   //Based on the productIDs from database
-  const validatorHashMap = new Map();
-  validatorHashMap.set('FREE', [1,2])
-  validatorHashMap.set('PREMIUM', [3])
-  
+  const validatorHashMap = purchaseHelper.validatorHashMap();
 
   const { productID, userID } = req.body;
 
