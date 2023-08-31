@@ -92,6 +92,22 @@ const NewTransactionModal = ({isNewTransactionModalOpen, onClose}) => {
 
     const handleNewTransactionSubmit = async () =>{
 
+      if(isNaN(amount)){
+
+        Swal.fire({
+          title:"Invalid amount",
+          text:`Please enter a valid amount.`,
+          icon:'error',
+          showConfirmButton: true,
+          confirmButtonColor: colors['dark-graph-red'],
+          confirmButtonText:'Ok',
+          background:colors['dark-main'],
+          color:colors['dark-text'], 
+      })
+      return;
+        
+      }
+
       setLoading(true)
 
       await axios.post('/api/transaction/addNewTransaction', {

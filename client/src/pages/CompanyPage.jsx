@@ -94,7 +94,7 @@ const CompanyPage = () => {
         {field: 'company', headerName: 'Company', flex:1},
         {field: 'actions', headerName: 'Actions', flex:1, sortable: false, renderCell: (params) =>(
             <div className='flex flex-row items-center justify-between'>
-                <button><EditIcon onClick={() => handleEditRow(params)}/></button>
+                {/* <button><EditIcon onClick={() => handleEditRow(params)}/></button> */}
                 <button><DeleteIcon onClick={() => handleDeleteRow(params)}/></button>
             </div>
         )}

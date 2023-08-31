@@ -7,6 +7,8 @@ router.post('/', loginLimiter, authController.login)
 
 router.get('/session', authController.getSession)
 
+router.post('/updateSession', authController.updateSession)
+
 router.post('/logout', authController.logout)
 
 

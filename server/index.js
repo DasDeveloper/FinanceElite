@@ -97,14 +97,9 @@ app.post("/api/stripe/create-payment-intent", async (req, res) => {
     const product = await Product.findOne({productID: productID});
     if(!product) return res.status(404).send("Product not found. Check if correct product id was given.")
 
-    const customer = await stripe.customers.create();
-
-
     const paymentIntent = await stripe.paymentIntents.create({
-        customer: customer.id,
-        setup_future_usage: "off_session",
         amount: product.price*100,
-        currency: "cad"
+        currency: "cad",
     });
 
     res.send({
@@ -114,15 +109,7 @@ app.post("/api/stripe/create-payment-intent", async (req, res) => {
   else{
     return res.json({message: "Cannot purchase this plan.", status: 403})
   }
-
-
-
-  
-
-  
-  
   });
-
 
 
 app.listen(PORT, () =>{

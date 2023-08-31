@@ -34,6 +34,21 @@ const getSession = async (req,res) =>{
 
 }
 
+const updateSession = async (req, res) =>{
+    const {user} = req.session;
+
+    if(!user) return res.json({message: "Session not available", status:401});
+
+    const userMongo = await User.findOne({_id: user.userID})
+
+    if(!userMongo) returnres.json({message: "Unable to update the session.", status:404})
+
+    user.userPlan = userMongo.plan;
+    req.session.user = user;
+    req.session.save();
+    return res.json({message: "Session was updated", status:200})
+}
+
 
 const logout = async (req, res) =>{
 
@@ -47,6 +62,7 @@ module.exports = {
 
     login, 
     getSession, 
+    updateSession,
     logout
     
 }
