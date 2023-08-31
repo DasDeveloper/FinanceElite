@@ -39,7 +39,7 @@ const Homepage = () => {
             Enjoy a smooth experience!
           </Typography>
       </div>
-
+     
     </div>
   )
 }

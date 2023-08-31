@@ -112,9 +112,9 @@ const CheckoutPage = () => {
   
   return (
     
-    <div className="flex mx-auto w-full mt-44 p-6 bg-white shadow-md rounded-lg">
+    <div className="flex mx-auto w-full mt-44 p-6 shadow-md rounded-lg">
     {/* Order Summary */}
-    <div className="w-1/2 pr-6">
+    {/* <div className="w-1/2 pr-6">
       <h2 className="text-lg font-semibold mb-4">Order Summary</h2>
       <div className='m-4'>
 
@@ -122,7 +122,25 @@ const CheckoutPage = () => {
         <Typography fontSize={20}>{productDetail.productPrice}</Typography>
 
        </div>
+    </div> */}
+    <div class="w-1/2 rounded-lg bg-white p-6 text-dark-main">
+      <h2 class="text-xl font-semibold mb-4">Order Summary</h2>
+      <div class="flex items-center justify-between mb-4">
+        {productDetail.productName ==='PREMIUMTOPRO' ? (<>
+        <p>Upgrade from Premium to Pro</p>
+        <p>${productDetail.productPrice}</p></>):
+        (<>
+        <p>{productDetail.productName} Plan</p>
+        <p>${productDetail.productPrice}</p></>)}
+      </div>
+      <hr class="border-t border-dark-text my-4"/>
+      <div class="flex items-center justify-between">
+        <p>Total</p>
+        <p class="text-xl font-semibold">${productDetail.productPrice}</p>
+      </div>
+      {/* <button class="mt-6 w-full py-2 bg-dark-graph-red text-white rounded-md hover:bg-dark-graph-red-light transition duration-300">Checkout</button> */}
     </div>
+
   
     {/* Payment Form */}
     <div className="w-1/2">
