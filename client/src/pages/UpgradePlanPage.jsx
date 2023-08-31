@@ -3,12 +3,13 @@ import React, { useContext } from 'react'
 import { SessionAPIContext } from '../contexts/SessionAPIContext'
 import CheckIcon from '@mui/icons-material/Check';
 import PublicNavbar from '../global/PublicNavbar';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const UpgradePlanPage = () => {
 
     
   const userInfo = useContext(SessionAPIContext);
+  const navigate= useNavigate();
 
 
 
@@ -36,7 +37,7 @@ const UpgradePlanPage = () => {
 
                   <div className='text-center'>
                       <Typography className="text-center py-12" fontSize={35}>39.99$</Typography>
-                      <button className='bg-dark-graph-red w-2/4 h-10 rounded-2xl'><Link to={'/checkout'} state={{productID:1}}>Select</Link></button>
+                      <button onClick={()=>{navigate('/checkout', {state:{productID:1}})}} className='bg-dark-graph-red w-2/4 h-10 rounded-2xl'>Select</button>
                   </div>
             </div>
 
@@ -53,7 +54,7 @@ const UpgradePlanPage = () => {
               </ul>
               <div className='text-center'>
                   <Typography className="text-center py-12" fontSize={35}>99.99$</Typography>
-                  <button className='bg-dark-graph-red w-2/4 h-10 rounded-2xl'><Link to={'/checkout'} state={{productID:2}}>Select</Link></button>
+                  <button onClick={()=>{navigate('/checkout', {state:{productID:2}})}} className='bg-dark-graph-red w-2/4 h-10 rounded-2xl'>Select</button>
               </div>
             </div>
 
@@ -74,7 +75,7 @@ const UpgradePlanPage = () => {
               <div className='text-center'>
                   <Typography className="text-center py-12" fontSize={35}>60.00$</Typography>
                   
-                  <button className='bg-dark-graph-red w-2/4 h-10 rounded-2xl'><Link to={'/checkout'} state={{productID:3}}>Select</Link></button>
+                  <button  onClick={()=>{navigate('/checkout', {state:{productID:3}})}} className='bg-dark-graph-red w-2/4 h-10 rounded-2xl'>Select</button>
               </div>
             </div>
             

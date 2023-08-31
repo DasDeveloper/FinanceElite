@@ -30,7 +30,7 @@ const SuccesPayment = () => {
         </svg>
         <h2 className="mt-4 text-xl font-semibold text-dark-text">Payment Successful</h2>
         <p className="mt-2 text-dark-text">
-          Thank you for your payment! Your transaction was successful.
+          Thank you for your payment! Your transaction was successful and you've upgraded to your new plan.
         </p>
         <button  onClick={redirectToDashboard} className="mt-6 bg-dark-graph-red hover:bg-dark-graph-red-light text-dark-text px-4 py-2 rounded-md">
           Continue

@@ -71,9 +71,9 @@ const CheckoutPage = () => {
       }).then(res =>{
         setLoading(false)
         if(res.data.status ===200){
-          Swal.fire({
-            title: 'Upgraded to another plan.'
-          })
+          // Swal.fire({
+          //   title: 'Upgraded to another plan.'
+          // })
           delete location.state;
           navigate('/success')
   
@@ -114,15 +114,7 @@ const CheckoutPage = () => {
     
     <div className="flex mx-auto w-full mt-44 p-6 shadow-md rounded-lg">
     {/* Order Summary */}
-    {/* <div className="w-1/2 pr-6">
-      <h2 className="text-lg font-semibold mb-4">Order Summary</h2>
-      <div className='m-4'>
 
-        <Typography fontSize={20}>{productDetail.productName}</Typography>
-        <Typography fontSize={20}>{productDetail.productPrice}</Typography>
-
-       </div>
-    </div> */}
     <div class="w-1/2 rounded-lg bg-white p-6 text-dark-main">
       <h2 class="text-xl font-semibold mb-4">Order Summary</h2>
       <div class="flex items-center justify-between mb-4">
