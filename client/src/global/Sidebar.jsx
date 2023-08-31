@@ -75,6 +75,13 @@ const Sidebar = ({isOpen}) => {
               <Typography>Group Chart</Typography>
             </CNavItem>
 
+            <Typography className='text-dark-icon p-2 text-2xl'> Upgrade </Typography>
+
+            <CNavItem className='flex flex-row p-2 hover:bg-dark-secondary w-full' href="/upgrade">
+              <WorkspacesIcon className='mr-2'/>
+              <Typography>Upgrade Plan</Typography>
+            </CNavItem>
+
           </CSidebarNav>
 
       </CSidebar>

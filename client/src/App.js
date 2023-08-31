@@ -23,8 +23,16 @@ import RevenueChartPage from "./pages/RevenueChartPage";
 import GroupChartPage from "./pages/GroupChartPage";
 import Homepage from "./pages/Homepage";
 import PlanPage from "./pages/PlanPage";
+import CheckoutPage from "./pages/CheckoutPage";
+import {Elements} from '@stripe/react-stripe-js';
+import { loadStripe } from "@stripe/stripe-js";
+import UpgradePlanPage from "./pages/UpgradePlanPage";
+import StripeContainer from "./pages/StripeContainer";
+import SuccessPayment from "./pages/SuccesPayment"
 
 
+const response = await axios.get('/api/config');
+const stripePromise = loadStripe(response.data)
 
 function App() {
   
@@ -32,8 +40,9 @@ function App() {
   const navigate = useNavigate();
 
   const [sessionInfo, setSessionInfo] = useState();
+  const [userPlan, setUserPlan] = useState();
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-  const excludedURLForSidebar = ['/plans', '/'];
+  const excludedURLForSidebar = ['/plans', '/', '/upgrade', '/checkout', '/success'];
   const excludedURLForNoSession = ['/', '/signup', '/plans']
 
   useEffect(()=>{
@@ -45,6 +54,7 @@ function App() {
           if(response.data.status===200){
 
             setSessionInfo(response.data.user);
+            
 
             return;
           }
@@ -66,6 +76,7 @@ function App() {
   return (
 
     <SessionAPIContext.Provider value={sessionInfo}>
+
     
       <div className="flex flex-row">
 
@@ -83,7 +94,10 @@ function App() {
           <Route path="/" element={<Homepage/>}></Route>
 
           <Route path="/plans" element={<PlanPage/>}></Route>
-
+          <Route path="/upgrade" element={<ProtectedRoute><UpgradePlanPage/></ProtectedRoute>}></Route>
+          <Route path="/checkout" element={<ProtectedRoute><StripeContainer stripePromise={stripePromise}/></ProtectedRoute>}></Route>
+          <Route path="/success" element={<SuccessPayment/>}></Route>
+          
           <Route path="/dashboard" element={<ProtectedRoute><Dashboard isSidebarOpen={isSidebarOpen}/></ProtectedRoute>}></Route>
           {/* <Route path="/calendar" element={<ProtectedRoute><CalendarPage/></ProtectedRoute>}></Route> */}
           <Route path="/category" element={<ProtectedRoute ><CategoryPage/></ProtectedRoute>}></Route>

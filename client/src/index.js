@@ -6,19 +6,15 @@ import {loadStripe} from '@stripe/stripe-js';
 import axios from "axios"
 import './index.css';
 import App from './App';
+import "@stripe/stripe-js"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-const response = await axios.get('/api/config');
 
-const stripePromise = loadStripe(response.data)
 root.render(
   
     <BrowserRouter>
-      <Elements stripe={stripePromise}>
         <App />
-      </Elements>
-      
     </BrowserRouter>
 );
 

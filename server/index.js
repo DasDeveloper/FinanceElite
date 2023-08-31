@@ -5,6 +5,9 @@ const dotenv = require("dotenv").config();
 const session = require('express-session')
 const MongoDBStore = require('connect-mongo');
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY)
+const Product = require('./model/productModel')
+const User = require('./model/userModel')
+const purchaseHelper = require('./helper/purchaseHelper')
 
 
 const app = express();
@@ -42,7 +45,7 @@ app.get('/', (req, res ) =>{
     res.send("Hello World!")
 })
 app.get('/api/config', (req, res) =>{
-    const publishableKey = process.env.STRIPE_PUBLIC_KEY
+    const publishableKey = process.env.STRIPE_PUBLIC_KEY.toString()
     res.send(publishableKey);
 })
 
@@ -72,7 +75,41 @@ app.use('/api/auth', require('./routes/authRoutes.js'));
 app.use('/api/category', require('./routes/categoryRoutes.js'))
 app.use('/api/company', require('./routes/companyRoutes'))
 app.use('/api/transaction', require('./routes/transactionRoutes'))
-app.use('/api/stripe', require('./routes/stripeRoutes.js'))
+app.use('/api/product', require('./routes/productRoutes.js'))
+// app.use('/api/stripe', require('./routes/stripeRoutes.js'))
+
+app.post("/api/stripe/create-payment-intent", async (req, res) => {
+
+  //Based on the productIDs from database
+  const validatorHashMap = purchaseHelper.validatorHashMap();
+
+  const { productID, userID } = req.body;
+
+  if(!productID || !userID) return res.status(404).json({message: "ProductID or UserID missing"})
+
+  const user = await User.findOne({_id: userID});
+  if(!user) return res.status(404).send("User not found.");
+
+  const userPlan = user.plan;
+
+  if(validatorHashMap.get(userPlan).includes(productID)){
+
+    const product = await Product.findOne({productID: productID});
+    if(!product) return res.status(404).send("Product not found. Check if correct product id was given.")
+
+    const paymentIntent = await stripe.paymentIntents.create({
+        amount: product.price*100,
+        currency: "cad",
+    });
+
+    res.send({
+        clientSecret: paymentIntent.client_secret,
+    });
+  }
+  else{
+    return res.json({message: "Cannot purchase this plan.", status: 403})
+  }
+  });
 
 
 app.listen(PORT, () =>{
