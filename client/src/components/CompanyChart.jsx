@@ -35,7 +35,7 @@ const CompanyChart = ({daysNumber}) => {
 
   return (
     <>
-    {dataGraph.length ===0 ? (<div className='text-3xl text-dark-text text-center m-auto my-auto'>No data found</div>):(<></>)}
+    {dataGraph.length ===0 ? (<div className='text-3xl text-dark-text h-min text-center m-auto'>No data found</div>):(<></>)}
     <ResponsivePie
     data={dataGraph}
     margin={{ top: 40, right: 80, bottom: 80, left: 80 }}

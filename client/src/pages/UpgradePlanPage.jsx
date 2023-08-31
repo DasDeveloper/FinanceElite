@@ -14,17 +14,20 @@ const UpgradePlanPage = () => {
 
 
   return (
-    <div className='pl-20 pr-16 flex flex-col h-100vh bg-dark-main text-dark-text'>
+    <div className='pl-20 pr-16 flex flex-col h-full bg-dark-main text-dark-text'>
 
         <PublicNavbar/>
 
-        <Typography  className="text-center" fontSize={50}>Based on your current plan, here are your possible upgrades:</Typography>
+      {userInfo.userPlan ==='FREE' || userInfo.userPlan ==='PREMIUM' ? <>
 
+        <Typography  className="text-center" fontSize={35}>Based on your current plan, here are your possible upgrades:</Typography>
+
+      </>:<></>}
         
-        <div className='flex justify-between mt-10 m-auto h-120 w-4/5'>
+        <div className='flex justify-between mt-10 my-10 m-auto h-120 w-4/5'>
           
           {userInfo.userPlan ==='FREE' ?<>
-            <div className='p-4 h-full w-100 text-dark-text border-dark-text border-2 rounded-3xl bg-none animate-fade-down animate-duration-500'>
+            <div className='p-4 pb-6  h-min w-4/12 text-dark-text border-dark-text border-2 rounded-3xl bg-none animate-fade-down animate-duration-500'>
                   <Typography className='text-center' fontSize={35}>Premium</Typography>
 
                   <ul className='mt-10 p-2'>
@@ -43,7 +46,7 @@ const UpgradePlanPage = () => {
 
 
 
-            <div className='p-4 h-full w-100 text-dark-text border-dark-text border-2 rounded-3xl bg-none animate-fade-down animate-duration-500 animate-delay-500'>
+            <div className='p-4 pb-6 h-min w-4/12 text-dark-text border-dark-text border-2 rounded-3xl bg-none animate-fade-down animate-duration-500 animate-delay-500'>
               <Typography className='text-center' fontSize={35}>Pro</Typography>
 
               <ul className='mt-10 p-2'>
@@ -63,7 +66,7 @@ const UpgradePlanPage = () => {
 
             {userInfo.userPlan === 'PREMIUM' ? <>
 
-            <div className='p-4 h-full w-100 text-dark-text border-dark-text border-2 rounded-3xl bg-none animate-fade-down animate-duration-500 animate-delay-500'>
+            <div className='p-4 pb-6 h-min w-4/12 text-dark-text border-dark-text border-2 rounded-3xl bg-none animate-fade-down animate-duration-500 animate-delay-500'>
               <Typography className='text-center' fontSize={35}>Premium to Pro</Typography>
 
               <ul className='mt-10 p-2'>
@@ -79,6 +82,11 @@ const UpgradePlanPage = () => {
               </div>
             </div>
             
+            </>:<></>}
+
+            {userInfo.userPlan ==='PRO' ? <>
+
+              <Typography  className="text-center" fontSize={35}>There are no upgrades possible. Thank you for being a customer at FinanceElite! </Typography>
             </>:<></>}
         
         </div>

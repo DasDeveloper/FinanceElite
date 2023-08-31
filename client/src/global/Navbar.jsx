@@ -30,8 +30,8 @@ const Navbar = ({onMenuClick}) => {
 
   return (
     <>
-    <Box className='flex justify-between  m-0 p-0 bg-dark-main h-20 w-full border-b-dark-secondary'>
-      <MenuOutlinedIcon  onClick={onMenuClick} className='mt-auto mb-auto ml-1' sx={{fontSize:50, color:colors['dark-icon']}}/>
+    <Box className='flex justify-between  m-0 pt-4 bg-dark-main h-20 w-auto border-b-dark-secondary'>
+      <MenuOutlinedIcon  onClick={onMenuClick} className='mt-auto mb-auto ml-1' sx={{fontSize:50, color:colors['dark-text']}}/>
       
       <button  onClick={handleLogout} className='h-10 w-28 bg-dark-graph-red text-dark-text rounded-3xl mt-auto mb-auto ml-auto mr-3'><LogoutIcon/> Logout</button>
       

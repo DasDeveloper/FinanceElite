@@ -24,11 +24,16 @@ const PublicNavbar = () => {
       const redirectToDashboard = () =>{
         navigate('/dashboard')
       }
+      const redirectToHomepage = () =>{
+
+        navigate('/')
+
+      }
 
   return (
      <div className='bg-none flex flex-row justify-between h-20 mt-12'>
           <div className='flex flex-row text-dark-text'>
-            <PublicIcon sx={{fontSize:35, color:colors['dark-text']}}/> <Typography fontSize={25}>FinanceElite</Typography>
+            <PublicIcon onClick={redirectToHomepage} sx={{fontSize:35, color:colors['dark-text']}}/> <Typography onClick={redirectToHomepage} fontSize={25}>FinanceElite</Typography>
             <p className='h-10 ml-10 mt-1 text-2xl text-dark-text hover:underline'><Link to={'/plans'}>Our plans</Link></p>
           </div>
           <div>

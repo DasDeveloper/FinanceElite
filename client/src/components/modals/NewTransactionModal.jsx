@@ -169,7 +169,7 @@ const NewTransactionModal = ({isNewTransactionModalOpen, onClose}) => {
   return (
     <div className='bg-modal-background w-full h-full fixed z-1000'>
 
-    <div className='flex flex-col bg-dark-secondary w-3/5 h-120 translate-x-20% translate-y-20%'>
+    <div className='flex flex-col bg-dark-secondary w-2/5 h-120 translate-x-50% translate-y-10%'>
         <div className='flex flex-row-reverse'>
           <button onClick={onPressX} className='text-dark-text m-4 text-3xl'>x</button>
         </div>

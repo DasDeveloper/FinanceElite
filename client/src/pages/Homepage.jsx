@@ -33,10 +33,15 @@ const Homepage = () => {
 
       <div className='text-dark-text mt-10 w-120'>
         <Typography fontSize={45}>Summarize your transactions with ease.</Typography>
-          <Typography fontSize={20 } className='w-110 pt-10'>
-            Analyze your expenses and transactions by adding your own data. 
-            Improve your decisions by using our reliable and secure graphs.
-            Enjoy a smooth experience!
+          <Typography fontSize={20 } className='pt-10'>
+          Welcome to FinanceElite – Your Ultimate Financial Tracking Solution!
+
+          Take control of your finances like never before with FinanceElite.
+          <br/> 
+          Our platform empowers you to effortlessly record and manage your transactions, whether it's revenue or spending. 
+          <br/>
+         <span>Join FinanceElite today and unlock a world of financial clarity and control. 
+          Your journey to financial excellence starts here.</span>
           </Typography>
       </div>
      

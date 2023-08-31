@@ -13,12 +13,12 @@ const Dashboard = ({isSidebarOpen}) => {
 
   return (
     <>
-    <div className='flex flex-col h-full bg-dark-main text-dark-secondary'>
+    <div className='flex flex-col w-full bg-dark-main text-dark-text'>
 
 
-      <Typography fontSize={35} className='p-4 text-dark-icon'>Dashboard</Typography>
+      <Typography fontSize={35} className='p-4 '>Dashboard</Typography>
 
-      <Typography fontSize={25} className='text-dark-icon p-4 underline'>Spending (Last 14 days)</Typography>
+      <Typography fontSize={25} className=' p-4 underline'>Spending (Last 14 days)</Typography>
       <div className='h-80 bg-dark-secondary m-4 pl-5'>
       
         <SpendingVsRevenueChart />
@@ -26,15 +26,15 @@ const Dashboard = ({isSidebarOpen}) => {
       </div>
 
       
-        <Typography fontSize={25} className='text-dark-icon p-4 underline'>Spending Per Company and Category (Last 14 days)</Typography>
-        <div className='flex flex-row h-70'>
+        <Typography fontSize={25} className=' p-4 underline'>Spending Per Company and Category (Last 14 days)</Typography>
+        <div className='flex flex-row max-w-full h-70'>
 
-          <div className='h-full w-2/4 bg-dark-secondary m-4'>
+          <div className='h-4/5 w-5/12 text-dark-icon bg-dark-secondary m-4'>
 
             <SpendingPerCompanyChart/>
 
           </div>
-          <div className='h-full w-2/4 bg-dark-secondary m-4'>
+          <div className='h-4/5 w-5/12 text-dark-icon bg-dark-secondary m-4'>
           
             <SpendingPerCategory/>
             

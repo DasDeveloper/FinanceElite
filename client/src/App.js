@@ -78,11 +78,11 @@ function App() {
     <SessionAPIContext.Provider value={sessionInfo}>
 
     
-      <div className="flex flex-row">
+      <div className="flex flex-row h-full">
 
       {sessionInfo && excludedURLForSidebar.indexOf(pathname)<0 &&  <Sidebar isOpen={isSidebarOpen}/>}
         
-      <div className="flex flex-col h-100vh w-full">
+      <div className="flex flex-col w-full h-max">
 
      
      {sessionInfo && excludedURLForSidebar.indexOf(pathname)<0 &&  <Navbar  onMenuClick={() => setIsSidebarOpen(!isSidebarOpen)}/>}
