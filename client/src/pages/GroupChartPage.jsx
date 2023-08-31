@@ -23,11 +23,11 @@ const GroupChartPage = () => {
     }
 
     return (
-      <div className='flex flex-col h-full bg-dark-main text-dark-secondary'>
+      <div className='flex flex-col h-full bg-dark-main text-dark-text'>
   
       <div className='flex flex-row justify-between items-center mr-10'>
   
-        <Typography fontSize={35} className='p-4 text-dark-icon'>Company Chart</Typography>
+        <Typography fontSize={35} className='p-4'>Company Chart</Typography>
         <FormControl
           sx={{
             width: '250px',
@@ -73,14 +73,14 @@ const GroupChartPage = () => {
         
       </div>
         
-      <div className='h-80 bg-dark-secondary m-4 pl-5'>
+      <div className='h-80 text-dark-icon bg-dark-secondary m-4 pl-5'>
         <CompanyChart daysNumber={numberCompany}/>
       </div>
         
 
       <div className='flex flex-row justify-between items-center mr-10'>
   
-        <Typography fontSize={35} className='p-4 text-dark-icon'>Category Chart</Typography>
+        <Typography fontSize={35} className='p-4'>Category Chart</Typography>
         <FormControl
           sx={{
             width: '250px',
@@ -126,7 +126,7 @@ const GroupChartPage = () => {
         
       </div>
 
-      <div className='h-80 bg-dark-secondary m-4 pl-5'>
+      <div className='h-80 text-dark-icon bg-dark-secondary m-4 pl-5'>
         <CategoryChart daysNumber={numberCategory}/>
       </div>
 

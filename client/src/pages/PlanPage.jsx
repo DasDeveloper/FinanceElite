@@ -14,13 +14,13 @@ const PlanPage = () => {
 
 
   return (
-    <div className='pl-20 pr-16 flex flex-col h-100vh bg-gradient-to-t from-[#374e67] from-20% to-[#0c141c] to-70%'>
+    <div className='pl-20 pr-16 flex flex-col h-full bg-gradient-to-t from-[#374e67] from-20% to-[#0c141c] to-70%'>
 
         <PublicNavbar/>
 
-        <div className='flex justify-between mt-10 m-auto h-120 w-4/5'>
+        <div className='flex justify-between mt-10 m-auto h-120 w-full'>
 
-            <div className='p-4 h-full w-100 text-dark-text border-dark-text border-2 rounded-3xl bg-none animate-fade-down animate-duration-500'>
+            <div className='p-4 m-2 h-90% w-80 text-dark-text border-dark-text border-2 rounded-3xl bg-none animate-fade-down animate-duration-500'>
 
                 <Typography className='text-center' fontSize={35}>Free</Typography>
 
@@ -33,7 +33,7 @@ const PlanPage = () => {
 
             </div>
 
-            <div className='p-4 h-full w-100 text-dark-text border-dark-text border-2 rounded-3xl bg-none animate-fade-down animate-duration-500 animate-delay-500'>
+            <div className='p-4 m-2 h-90% w-80 text-dark-text border-dark-text border-2 rounded-3xl bg-none animate-fade-down animate-duration-500 animate-delay-500'>
 
                 <Typography className='text-center' fontSize={35}>Premium</Typography>
 
@@ -50,7 +50,7 @@ const PlanPage = () => {
                 </div>
             </div>
 
-            <div className='p-4 h-full w-100 text-dark-text border-dark-text border-2 rounded-3xl bg-none animate-fade-down animate-duration-500 animate-delay-1000'>
+            <div className='p-4 m-2 h-90% w-80 text-dark-text border-dark-text border-2 rounded-3xl bg-none animate-fade-down animate-duration-500 animate-delay-1000'>
 
                 <Typography className='text-center' fontSize={35}>Pro</Typography>
 
