@@ -3,7 +3,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { backgroundColor } from '../theme';
 import axios from 'axios';
 import { SessionAPIContext } from '../contexts/SessionAPIContext';
-
+import Swal from "sweetalert2"
 const RevenueChart = ({daysNumber}) => {
     const [revenueData, setRevenueData] = useState([]);
     const colors = backgroundColor;
@@ -138,8 +138,20 @@ const getRevenueData = async () =>{
             userID: userInfo.userID,
             daysNumber: daysNumber
         }).then(res =>{
-            console.log(res.data.value)
             setRevenueData(res.data.value)
+        }).catch(err =>{
+            if(err.response.status ===429){
+                Swal.fire({
+                    title:"Slow down!",
+                    text:`You're making too many requests. Try again later.`,
+                    icon:'warning',
+                    showConfirmButton: true,
+                    confirmButtonColor: colors['dark-graph-red'],
+                    confirmButtonText:'Ok',
+                    background:colors['dark-main'],
+                    color:colors['dark-text'], 
+                })
+            }
         })
     }
   return (
