@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { Box } from '@mui/material'
 import {ResponsivePie} from "@nivo/pie"
 import axios from "axios"
 import { useContext } from 'react'
