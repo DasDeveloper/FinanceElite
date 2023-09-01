@@ -9,7 +9,7 @@ This web application allows users to record, track and manage their financial tr
 Clone the project
 
 ```bash
-  git clone https://github.com/DasDeveloper/FinanceElite](https://github.com/DasDeveloper/FinanceElite.git
+  git clone https://github.com/DasDeveloper/FinanceElite.git
 ```
 
 Go to the project directory
