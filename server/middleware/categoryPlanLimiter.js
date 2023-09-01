@@ -1,6 +1,7 @@
 const User = require('../model/userModel');
 const Category = require('../model/categoryModel');
 const planHelper = require('../helper/planHelper')
+const {rateLimit} = require('express-rate-limit');
 
 const categoriesPlanLimiter = async (req, res, next) =>{
 
@@ -23,5 +24,5 @@ const categoriesPlanLimiter = async (req, res, next) =>{
 }
 
 module.exports = {
-    categoriesPlanLimiter
+    categoriesPlanLimiter, 
 }

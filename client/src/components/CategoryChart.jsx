@@ -5,6 +5,7 @@ import axios from "axios"
 import { useContext } from 'react'
 import { SessionAPIContext } from '../contexts/SessionAPIContext'
 import { backgroundColor } from '../theme'
+import Swal from "sweetalert2"
 
 const CategoryChart = ({daysNumber}) => {
     const userInfo = useContext(SessionAPIContext)
@@ -29,7 +30,21 @@ const CategoryChart = ({daysNumber}) => {
             alert('User ID not found. Contact administrator.')
             return;
         }
+        
         setDataGraph(res.data.value)
+    }).catch(err =>{
+        if(err.response.status ===429){
+            Swal.fire({
+                title:"Slow down!",
+                text:`You're making too many requests. Try again later.`,
+                icon:'warning',
+                showConfirmButton: true,
+                confirmButtonColor: colors['dark-graph-red'],
+                confirmButtonText:'Ok',
+                background:colors['dark-main'],
+                color:colors['dark-text'], 
+            })
+        }
     })
   }
 
