@@ -68,7 +68,7 @@ const SignupPage = () => {
         
     }
 
-    const {values, handleBlur, touched, errors, isSubmitting, handleChange, handleSubmit} = useFormik({
+    const {values, handleBlur, touched, errors, handleChange, handleSubmit} = useFormik({
 
         initialValues:{
             firstname: "",

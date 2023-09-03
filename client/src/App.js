@@ -37,7 +37,6 @@ function App() {
   const navigate = useNavigate();
 
   const [sessionInfo, setSessionInfo] = useState();
-  const [userPlan, setUserPlan] = useState();
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const excludedURLForSidebar = ['/plans', '/', '/upgrade', '/checkout', '/success'];
   const excludedURLForNoSession = ['/', '/signup', '/plans']
