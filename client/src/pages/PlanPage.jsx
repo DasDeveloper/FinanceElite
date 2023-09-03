@@ -1,17 +1,9 @@
 import React from 'react'
 import {Typography} from "@mui/material"
-import {Link, useNavigate} from "react-router-dom"
 import CheckIcon from '@mui/icons-material/Check';
-import { useContext } from 'react';
-import {SessionAPIContext} from  "../contexts/SessionAPIContext"
 import PublicNavbar from '../global/PublicNavbar';
-import { backgroundColor } from '../theme';
 
 const PlanPage = () => {
-    const colors = backgroundColor;
-    const navigate = useNavigate();
-    const userInfo = useContext(SessionAPIContext)
-
 
   return (
     <div className='pl-20 pr-16 flex flex-col h-full bg-gradient-to-t from-[#374e67] from-20% to-[#0c141c] to-70%'>

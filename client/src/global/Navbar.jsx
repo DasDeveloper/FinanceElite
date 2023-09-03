@@ -8,10 +8,6 @@ import axios from "axios"
 const Navbar = ({onMenuClick}) => {
 
   const colors = backgroundColor;
-  const location = useLocation();
-  const UppercaseLetter = location.pathname.substring(1,2).toUpperCase();
-  const currentPathname = location.pathname.substring(2);
-  const pathname = UppercaseLetter + currentPathname
 
   const handleLogout = async () =>{
 

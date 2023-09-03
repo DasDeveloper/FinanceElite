@@ -6,7 +6,7 @@ import SpendingPerCategory from '../components/SpendingPerCategory'
 
 
 
-const Dashboard = ({isSidebarOpen}) => {
+const Dashboard = () => {
 
 
  

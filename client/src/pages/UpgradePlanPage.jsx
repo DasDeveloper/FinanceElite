@@ -3,7 +3,7 @@ import React, { useContext } from 'react'
 import { SessionAPIContext } from '../contexts/SessionAPIContext'
 import CheckIcon from '@mui/icons-material/Check';
 import PublicNavbar from '../global/PublicNavbar';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const UpgradePlanPage = () => {
 
