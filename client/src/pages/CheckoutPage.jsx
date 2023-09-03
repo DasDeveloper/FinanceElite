@@ -11,7 +11,6 @@ const CheckoutPage = () => {
   const userInfo = useContext(SessionAPIContext);
   const navigate = useNavigate();
   const location = useLocation();
-  const [isOrderSummaryLoading, setIsOrderSummaryLoading] = useState(false);
   const [productDetail, setProductDetail] = useState({
     productName: null,
     productPrice:null

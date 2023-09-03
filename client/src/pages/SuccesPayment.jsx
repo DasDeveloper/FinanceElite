@@ -1,15 +1,10 @@
-import React, { useEffect } from 'react'
-import { useLocation, useNavigate } from 'react-router-dom'
-import axios from "axios"
-import { useStripe, loadStripe } from '@stripe/react-stripe-js'
+import React from 'react'
+import { useNavigate } from 'react-router-dom'
+
 
 const SuccesPayment = () => {
 
-  const location = useLocation();
   const navigate = useNavigate()
-  const urlParams = new URLSearchParams(window.location.search);
-  const paymentIntentId = urlParams.get('payment_intent');
-  const clientSecret = urlParams.get('payment_intent_client_secret');
 
   const redirectToDashboard = () =>{
     navigate('/dashboard')

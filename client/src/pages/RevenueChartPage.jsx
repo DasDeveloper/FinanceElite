@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import SpendingChart from '../components/SpendingChart'
 import {Typography} from "@mui/material"
 import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';

@@ -8,7 +8,6 @@ import ProtectedRoute from "./protectedRoutes/protectedRoute"
 import Navbar from './global/Navbar';
 import Sidebar from './global/Sidebar'
 import Dashboard from "./pages/Dashboard";
-import CalendarPage from "./pages/CalendarPage";
 import LoginPage from "./pages/LoginPage";
 import { useLocation } from "react-router-dom";
 import SignupPage from "./pages/SignupPage";
@@ -23,8 +22,6 @@ import RevenueChartPage from "./pages/RevenueChartPage";
 import GroupChartPage from "./pages/GroupChartPage";
 import Homepage from "./pages/Homepage";
 import PlanPage from "./pages/PlanPage";
-import CheckoutPage from "./pages/CheckoutPage";
-import {Elements} from '@stripe/react-stripe-js';
 import { loadStripe } from "@stripe/stripe-js";
 import UpgradePlanPage from "./pages/UpgradePlanPage";
 import StripeContainer from "./pages/StripeContainer";

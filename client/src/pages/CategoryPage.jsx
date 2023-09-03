@@ -3,7 +3,6 @@ import { Box, Typography } from '@mui/material'
 import {DataGrid, GridToolbar} from "@mui/x-data-grid"
 import axios from "axios"
 import { backgroundColor } from '../theme'
-import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import NewCategoryModal from '../components/modals/NewCategoryModal';
 import { useContext } from 'react'

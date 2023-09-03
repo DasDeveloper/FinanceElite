@@ -12,7 +12,6 @@ const StripeContainer = ({stripePromise}) => {
   const location = useLocation();
   const navigate = useNavigate();
   const [clientSecret, setClientSecret] = useState();
-  const [loading, setLoading] = useState();
   const userInfo = useContext(SessionAPIContext)
   const appearance = {
     theme: 'stripe',
