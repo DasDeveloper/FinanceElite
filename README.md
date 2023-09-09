@@ -43,7 +43,7 @@ To run this project, you will need to add the following environment variables to
 
 `DATABASE` = Your MongoDB database url.
 
-`SECRET_SESSION_KEY` = A secret key for your encrypt your sessions.
+`SECRET_SESSION_KEY` = A secret key to encrypt sessions.
 
 `SESSION_MAX_AGE` = A number that represents how long a session should last in milliseconds. 
 
