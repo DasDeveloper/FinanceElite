@@ -40,7 +40,6 @@ const LoginPage = () => {
       email:values.email,
       password:values.password
     }, {withCredentials:true}).then(res =>{
-      console.log(res.data)
 
       setLoading(false)
 
